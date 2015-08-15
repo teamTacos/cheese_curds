@@ -1,0 +1,37 @@
+%div{"ng-controller" => "PlayerController as playerCtrl"}
+  %div{"ng-repeat" => "player in playerCtrl.players"}
+    %span
+      {{player.index}} - {{player.name}}
+  %div{"ng-controller" => "GameTurnController as gameCtrl"}
+    %input.Button1{"type" => "button", "value" => "Roll 'Em", "ng-click" => "rollDice()"}
+      %span
+        Total Roll = {{rollTotal}}
+      %nobr
+      %nobr
+        .clipzone
+          %img{"src" => "images/dice-26772_640.png", "class" => "die die-{{die1}}"}
+        .clipzone
+          %img{"src" => "images/dice-26772_640.png", "class" => "die die-{{die2}}"}
+        %span.doubles{"ng-show" => "doubles"}
+          Doubles! ng-show="doubles" class="doubles">Doubles!
+      %nobr
+      %br
+
+  %div{"ng-controller" => "GameBoardController as boardCtrl"}
+    %div{"ng-controller" => "PlayerMovementController"}
+      %span
+        %input#Button2{"type" => "button", "value" => "Move {{rollTotal}}", "ng-click" => "movePlayer(rollTotal)"}
+      %span
+        %input#Button3{"type" => "button", "value" => "Go Back", "ng-click" => "moveBack()"}
+      %img.token{"src" => "images/icon_1.png"}
+
+
+      %div{"ng-repeat" => "property in boardCtrl.properties"}
+        .property{"id" => "property_{{property.id}}"}
+          .property-head{"style" => "background-color: {{property.color}}"}
+          .property-title
+            %span
+              {{ property.name }}
+          .property-price
+            %span
+              ${{ property.price }}
