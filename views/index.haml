@@ -17,21 +17,21 @@
       %nobr
       %br
 
-  %div{"ng-controller" => "GameBoardController as boardCtrl"}
-    %div{"ng-controller" => "PlayerMovementController"}
-      %span
-        %input#Button2{"type" => "button", "value" => "Move {{rollTotal}}", "ng-click" => "movePlayer(rollTotal)"}
-      %span
-        %input#Button3{"type" => "button", "value" => "Go Back", "ng-click" => "moveBack()"}
-      %img.token{"src" => "images/icon_1.png"}
+    %div{"ng-controller" => "GameBoardController as boardCtrl"}
+      %div{"ng-controller" => "PlayerMovementController"}
+        %span
+          %input#Button2{"type" => "button", "value" => "Move {{rollTotal}}", "ng-click" => "movePlayer(rollTotal)"}
+        %span
+          %input#Button3{"type" => "button", "value" => "Go Back", "ng-click" => "moveBack()"}
+        %img.token{"src" => "images/icon_1.png"}
 
 
-      %div{"ng-repeat" => "property in boardCtrl.properties"}
-        .property{"id" => "property_{{property.id}}"}
-          .property-head{"style" => "background-color: {{property.color}}"}
-          .property-title
-            %span
-              {{ property.name }}
-          .property-price
-            %span
-              ${{ property.price }}
+        %div{"ng-repeat" => "property in boardCtrl.properties"}
+          .property{"id" => "property_{{property.id}}"}
+            .property-head{"style" => "background-color: {{property.color}}"}
+            .property-title
+              %span
+                {{ property.name }}
+            .property-price
+              %span
+                ${{ property.price }}
