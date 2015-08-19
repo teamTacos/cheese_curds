@@ -1,0 +1,25 @@
+.cho {
+    display: block;
+    color: red;
+    border: solid 1px red;
+    background-color: lightpink;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.han {
+display: block;
+color: green;
+border: solid 1px green;
+background-color: lightgreen;
+width: 200px;
+height: 50px;
+border-radius: 10px;
+text-align: center;
+}
+
+.selected {
+    background-color: #1d60ff;
+}

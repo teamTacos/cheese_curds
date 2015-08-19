@@ -1,0 +1,16 @@
+%div{"ng-controller" => "GameTurnController as gameCtrl"}
+  %input.Button1{"type" => "button", "value" => "Roll 'Em", "ng-click" => "rollDice()"}
+    %span
+      Total Roll = {{rollTotal}}
+    %nobr
+    %nobr
+      .clipzone
+        %img{"src" => "images/dice-26772_640.png", "class" => "die die-{{die1}}"}
+      .clipzone
+        %img{"src" => "images/dice-26772_640.png", "class" => "die die-{{die2}}"}
+    %nobr
+    %br
+  .cho
+    cho
+  .han
+    han
