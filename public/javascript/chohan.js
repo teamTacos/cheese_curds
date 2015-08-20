@@ -13,11 +13,11 @@
             $scope.rollTotal = $scope.die1 + $scope.die2;
             if ($scope.rollTotal % 2 == 0)
             {
-                $("#han").addClass('selected');
-                $("#cho").removeClass('selected');
-            } else {
                 $("#cho").addClass('selected');
                 $("#han").removeClass('selected');
+            } else {
+                $("#han").addClass('selected');
+                $("#cho").removeClass('selected');
             }
             $scope.$broadcast('gameTurnEvent', $scope.rollTotal);
         };
@@ -35,10 +35,24 @@ $(document).ready(function(){
     var $cho = $('input[type="radio"][value="cho"]');
     $han.click(function(){
         $han.parent().addClass('selected');
-        $cho.parent().removeClass('selected')
+        $cho.parent().removeClass('selected');
     });
     $cho.click(function(){
         $cho.parent().addClass('selected');
-        $han.parent().removeClass('selected')
+        $han.parent().removeClass('selected');
     });
+    var $roll = $('#roll');
+    var $bet = $('#place-bet');
+    $roll.click(function() {
+        $(this).prop('disabled',true);
+        $(this).addClass('disabled');
+        $bet.prop('disabled',false);
+        $bet.removeClass('disabled');
+    })
+    $bet.click(function() {
+        $(this).prop('disabled',true);
+        $(this).addClass('disabled');
+        $roll.prop('disabled',false);
+        $roll.removeClass('disabled');
+    })
 });

@@ -11,13 +11,13 @@
       $999,999,999
     %div
       %label.betting-option
-        %input{"type" => 'radio', "value" => 'han', "name" => "bet-choice"}
-        Han
-      %label.betting-option
         %input{"type" => 'radio', "value" => 'cho', "name" => "bet-choice"}
-        Cho
+        Cho (even)
+      %label.betting-option
+        %input{"type" => 'radio', "value" => 'han', "name" => "bet-choice"}
+        Han (odd)
     %input#bet{"type" => "text", "size" => 10}
-    %input.button{"type" => "button", "value" => "Place Bet"}
+    %input#place-bet.button{"type" => "button", "value" => "Place Bet"}
     %br
   .center
     #cho.han-cho
@@ -25,4 +25,4 @@
     #han.han-cho
       han
   .center
-    %input.button{"type" => "button", "value" => "Roll 'Em", "ng-click" => "rollDice()"}
+    %input#roll.button{"type" => "button", "value" => "Roll 'Em", "ng-click" => "rollDice()"}
