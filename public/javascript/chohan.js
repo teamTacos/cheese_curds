@@ -46,13 +46,15 @@ $(document).ready(function(){
     $roll.click(function() {
         $(this).prop('disabled',true);
         $(this).addClass('disabled');
-        $bet.prop('disabled',false);
+        $('.bank').children().prop('disabled',false);
+        $('.option').prop('disabled',false);
         $bet.removeClass('disabled');
     })
     $bet.click(function() {
-        $(this).prop('disabled',true);
+        $('.bank').children().prop('disabled', true);
+        $('.option').prop('disabled',true);
         $(this).addClass('disabled');
         $roll.prop('disabled',false);
         $roll.removeClass('disabled');
-    })
+    });
 });
