@@ -37,10 +37,15 @@
         };
 
         function gameResult() {
+            var $resultImg = $('#result');
             if (rollResult == choice) {
                 addToBank(bid_amount);
+                $resultImg.addClass('winner');
+                $resultImg.removeClass('loser');
             } else {
                 subtractFromBank(bid_amount);
+                $resultImg.addClass('loser');
+                $resultImg.removeClass('winner');
             }
             $('#bank').text("$" + $scope.bank);
         }
@@ -88,5 +93,7 @@ $(document).ready(function(){
         $(this).addClass('disabled');
         $roll.prop('disabled',false);
         $roll.removeClass('disabled');
+        $('#result').removeClass('winner');
+        $('#result').removeClass('loser');
     });
 });
