@@ -3,8 +3,19 @@
     var app = angular.module('choHan', []);
 
     app.controller('GameTurnController', ['$scope', function ($scope) {
+        $scope.bank = 1000;
         $scope.die1 = '0';
         $scope.die2 = '0';
+        var rollResult = '';
+        var bid_amount = 0;
+        var choice = '';
+        $('#bank').text('$' + $scope.bank);
+
+        $scope.placeBet = function () {
+            bid_amount = parseInt($('#bet').val());
+            choice = $('input[type="radio"][name="bet-choice"]:checked').val();
+
+        };
 
         $scope.rollDice = function () {
             $scope.doubles = false;
@@ -13,21 +24,42 @@
             $scope.rollTotal = $scope.die1 + $scope.die2;
             if ($scope.rollTotal % 2 == 0)
             {
+                rollResult = 'cho'
                 $("#cho").addClass('selected');
                 $("#han").removeClass('selected');
             } else {
+                rollResult = 'han'
                 $("#han").addClass('selected');
                 $("#cho").removeClass('selected');
             }
             $scope.$broadcast('gameTurnEvent', $scope.rollTotal);
+            gameResult();
         };
+
+        function gameResult() {
+            if (rollResult == choice) {
+                addToBank(bid_amount);
+            } else {
+                subtractFromBank(bid_amount);
+            }
+            $('#bank').text("$" + $scope.bank);
+        }
 
         function rollDie() {
             var die = [1, 2, 3, 4, 5, 6];
             var randomIndex = Math.floor(Math.random() * die.length);
             return die.splice(randomIndex, 1)[0];
         }
+
+        function addToBank(amount) {
+            $scope.bank += amount;
+        }
+
+        function subtractFromBank(amount) {
+            $scope.bank -= amount
+        }
     } ]);
+
 })();
 
 $(document).ready(function(){

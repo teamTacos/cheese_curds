@@ -8,7 +8,7 @@
     %span.bank-title
       Bank:
     %span#bank.bank-amount
-      $999,999,999
+      ${{bank}}
     %div
       %label.betting-option
         %input.option{"type" => 'radio', "value" => 'cho', "name" => "bet-choice"}
@@ -17,7 +17,7 @@
         %input.option{"type" => 'radio', "value" => 'han', "name" => "bet-choice"}
         Han (odd)
     %input#bet{"type" => "text", "size" => 10}
-    %input#place-bet.button{"type" => "button", "value" => "Place Bet"}
+    %input#place-bet.button{"type" => "button", "value" => "Place Bet", "ng-click" => "placeBet()"}
     %br
   .center
     #cho.han-cho
