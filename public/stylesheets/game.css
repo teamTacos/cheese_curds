@@ -36,15 +36,37 @@
 .bank-amount {
     font-size: 40px;
     font-weight: bold;
-    padding: 10px 0 25px 0;
+    padding: 10px;
     display: block;
     color: darkgreen;
+    background-color: lightgoldenrodyellow;
+    border: 3px solid darkgreen;
+    margin-bottom: 10px;
+    border-radius: 10px;
 }
 
 input[type="text"] {
     border-radius: 10px;
-    font-size: 24px;
+    font-size: 30px;
     text-align: right;
+    vertical-align: bottom;
+}
+
+.betting-option {
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid;
+    width: 42%;
+    border-radius: 5px;
+    margin: 10px 5px;
+    color: #0094C4;
+    border: solid 1px #0094C4;
+}
+
+.betting-option.selected {
+    color: #0094C4;
+    border: solid 1px #0094C4;
+    background-color: #D5E7ED;
 }
 
 .die

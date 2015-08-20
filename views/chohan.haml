@@ -9,6 +9,13 @@
       Bank:
     %span#bank.bank-amount
       $999,999,999
+    %div
+      %label.betting-option.selected
+        %input{"type" => 'radio', "value" => 'han', "name" => "bet-choice"}
+        Han
+      %label.betting-option
+        %input{"type" => 'radio', "value" => 'cho', "name" => "bet-choice"}
+        Cho
     %input#bet{"type" => "text", "size" => 10}
     %input.button{"type" => "button", "value" => "Place Bet"}
     %br
