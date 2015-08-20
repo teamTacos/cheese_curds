@@ -29,3 +29,16 @@
         }
     } ]);
 })();
+
+$(document).ready(function(){
+    var $han = $('input[type="radio"][value="han"]');
+    var $cho = $('input[type="radio"][value="cho"]');
+    $han.click(function(){
+        $han.parent().addClass('selected');
+        $cho.parent().removeClass('selected')
+    });
+    $cho.click(function(){
+        $cho.parent().addClass('selected');
+        $han.parent().removeClass('selected')
+    });
+});
