@@ -1,14 +1,55 @@
+.main {
+    width: 700px;
+    margin: 0 auto;
+    position: relative;
+    font-family: Helvetica, Arial, Sans;
+}
+
+.dice {
+    position: absolute;
+    left: 0;
+    top: 15px;
+    width: 300px;
+}
+
 .clipzone
 {
-    position:relative;
-    width:107px;
-    height:105px;
-    overflow:hidden;
+    position: relative;
+    width: 107px;
+    height: 105px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.bank {
+    margin-left: 50%;
+    text-align: left;
+}
+
+.bank-title {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    display: block;
+}
+
+.bank-amount {
+    font-size: 40px;
+    font-weight: bold;
+    padding: 10px 0 25px 0;
+    display: block;
+    color: darkgreen;
+}
+
+input[type="text"] {
+    border-radius: 10px;
+    font-size: 24px;
+    text-align: right;
 }
 
 .die
 {
-    position:absolute;
+    position: relative;
 }
 .no-roll
 {
@@ -45,48 +86,28 @@
     left: -536px;
 }
 
-.doubles
-{
-    font-size: x-large;
-    font-weight: bolder;
-    color: Green;
+.button {
+    background-color: #768d87;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #566963;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 11px 23px;
+    text-decoration: none;
+}
+.button:hover {
+    background-color: #6c7c7c;
+}
+.button:active {
+    position: relative;
+    top: 1px;
+}
+.center {
+    text-align:center
 }
 
-.property
-{
-    width: 125px;
-    height: 200px;
-    border: 2px solid #000000;
-    display: block;
-    float: left;
-    margin: -1px;
-    text-align: center;
-}
-.property-head
-{
-    width: 125px;
-    height: 50px;
-    border-bottom: 2px solid #000000;
-    display: inline-block;
-    position: relative;
-}
-.property-title
-{
-    font-weight: bold;
-    font-family: Verdana;
-    position: relative;
-}
-.property-price
-{
-    font-weight: normal;
-    margin-bottom: 5px;
-    position: relative;
-    vertical-align: bottom;
-}
-.token
-{
-    position: absolute;
-    width: 45px;
-    height: 45px;
-    z-index: 999;
-}

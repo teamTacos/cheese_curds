@@ -13,11 +13,11 @@
             $scope.rollTotal = $scope.die1 + $scope.die2;
             if ($scope.rollTotal % 2 == 0)
             {
-                $(".han").addClass('selected');
-                $(".cho").removeClass('selected');
+                $("#han").addClass('selected');
+                $("#cho").removeClass('selected');
             } else {
-                $(".cho").addClass('selected');
-                $(".han").removeClass('selected');
+                $("#cho").addClass('selected');
+                $("#han").removeClass('selected');
             }
             $scope.$broadcast('gameTurnEvent', $scope.rollTotal);
         };
