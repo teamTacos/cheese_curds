@@ -5,6 +5,27 @@
     font-family: Helvetica, Arial, Sans;
 }
 
+.han-cho {
+    position: relative;
+    display: inline-block;
+    color: #0094C4;
+    border: solid 1px #0094C4;
+    background-color: #D5E7ED;
+    width: 200px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+    margin: 25px 10px;
+}
+
+.selected {
+    color: #D5E7ED;
+    background-color: #0094C4;
+    border: solid 1px #D5E7ED;
+}
+
 .dice {
     position: absolute;
     left: 0;
