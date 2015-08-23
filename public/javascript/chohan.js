@@ -22,30 +22,18 @@
             $scope.die1 = rollDie();
             $scope.die2 = rollDie();
             $scope.rollTotal = $scope.die1 + $scope.die2;
-            if ($scope.rollTotal % 2 == 0)
-            {
-                rollResult = 'cho'
-                $("#cho").addClass('selected');
-                $("#han").removeClass('selected');
-            } else {
-                rollResult = 'han'
-                $("#han").addClass('selected');
-                $("#cho").removeClass('selected');
-            }
             $scope.$broadcast('gameTurnEvent', $scope.rollTotal);
-            gameResult();
+            gameResult($scope.rollTotal);
         };
 
-        function gameResult() {
-            var $resultImg = $('#result');
-            if (rollResult == choice) {
+        function gameResult(rollTotal) {
+            results.highlightRollResult(rollTotal);
+            if (results.rollResult == choice) {
                 addToBank(bid_amount);
-                $resultImg.addClass('winner');
-                $resultImg.removeClass('loser');
+                results.showWinner();
             } else {
                 subtractFromBank(bid_amount);
-                $resultImg.addClass('loser');
-                $resultImg.removeClass('winner');
+                results.showLoser();
             }
             $('#bank').text("$" + $scope.bank);
         }
@@ -63,9 +51,48 @@
         function subtractFromBank(amount) {
             $scope.bank -= amount
         }
+
     } ]);
 
 })();
+
+var results = {
+    init: function() {
+        results.possibleResults = {
+            han: $("#han"),
+            cho: $("#cho")
+        };
+        results.image = $('#result');
+        results.rollResult = nil;
+    },
+    showWinner: function() {
+        results.image.addClass('winner');
+        results.image.removeClass('loser')
+    },
+    showLoser: function() {
+        results.image.addClass('loser');
+        results.image.removeClass('winner');
+    },
+    highlightRollResult: function(rollTotal) {
+        if (rollTotal % 2 == 0)
+        {
+            results.rollResult = 'cho';
+            results.selected(results.possibleResults.cho);
+            results.unselected(results.possibleResults.han);
+        } else {
+            results.rollResult = 'han';
+            results.selected(results.possibleResults.han);
+            results.unselected(results.possibleResults.cho);
+        }
+    },
+    selected: function(element) {
+        $(element).addClass('selected');
+    },
+    unselected: function(element) {
+        $(element).removeClass('selected');
+    }
+
+};
 
 $(document).ready(function(){
     var $han = $('input[type="radio"][value="han"]');
@@ -97,3 +124,5 @@ $(document).ready(function(){
         $('#result').removeClass('loser');
     });
 });
+
+$( document ).ready( results.init );
