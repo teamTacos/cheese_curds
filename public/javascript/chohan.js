@@ -4,13 +4,12 @@
 
     app.controller('GameTurnController', ['$scope', function ($scope) {
         bank.init();
-        $scope.bank = bank.startingAmount;
+        $scope.bank = bank.total;
         $scope.die1 = '0';
         $scope.die2 = '0';
         var rollResult = '';
         var bid_amount = 0;
         var choice = '';
-        $('#bank').text('$' + $scope.bank);
 
         $scope.placeBet = function () {
             bid_amount = parseInt($('#bet').val());
@@ -36,8 +35,6 @@
                 $scope.bank = bank.subtractFromBank(bid_amount);
                 results.showLoser();
             }
-            bank.updateBankText()
-            //$('#bank').text("$" + $scope.bank);
         }
 
         function rollDie() {

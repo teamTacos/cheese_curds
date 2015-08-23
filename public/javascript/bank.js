@@ -10,9 +10,5 @@ var bank = {
     subtractFromBank: function(amount) {
         bank.total -= amount
         return bank.total;
-    },
-    updateBankText: function() {
-        $('#bank').text("$" + bank.total);
     }
-
 };
