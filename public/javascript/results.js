@@ -5,15 +5,7 @@ var results = {
             cho: $("#cho")
         };
         results.image = $('#result');
-        results.rollResult = nil;
-    },
-    showWinner: function() {
-        results.image.addClass('winner');
-        results.image.removeClass('loser')
-    },
-    showLoser: function() {
-        results.image.addClass('loser');
-        results.image.removeClass('winner');
+        results.rollResult = '';
     },
     highlightRollResult: function(rollTotal) {
         if (rollTotal % 2 == 0)
