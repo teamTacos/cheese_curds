@@ -55,16 +55,5 @@ $(document).ready(function(){
         $cho.parent().addClass('selected');
         $han.parent().removeClass('selected');
     });
-    //var $roll = $('#roll');
-    //var $bet = $('#place-bet');
-    ////$roll.click(function() {
-    ////    game.enableBet();
-    ////    game.disableRoll();
-    ////});
-    //$bet.click(function() {
-    //    game.disableBet();
-    //    game.enableRoll();
-    //    $('#result').removeClass('winner');
-    //    $('#result').removeClass('loser');
-    //});
+
 });
