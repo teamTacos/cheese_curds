@@ -158,15 +158,6 @@ input[type="text"] {
 .center {
     text-align:center
 }
-.winner {
-    background-image: url("/images/winning.gif");
-    width: 310px;
-    height: 189px;
-    display: block;
-}
-.loser {
-    background-image: url("/images/loser.gif");
-    width: 245px;
-    height: 147px;
-    display: block;
+.result {
+    margin: 20px;
 }

@@ -26,7 +26,7 @@
       han
   .center
     %input#roll.button{"type" => "button", "value" => "Roll 'Em", "ng-click" => "rollDice()"}
-  .center{"ng-show" => "isWinner"}
-    .winner
-  .center{"ng-show" => "isLoser"}
-    .loser
+  .center.result{"ng-show" => "isWinner"}
+    %img{"src" => "images/winning.gif"}
+  .center.result{"ng-show" => "isLoser"}
+    %img{"src" => "images/winning.gif"}
