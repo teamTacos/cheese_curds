@@ -10,9 +10,13 @@
 
         $scope.placeBet = function () {
             bid_amount = parseInt($('#bet').val());
-            choice = $('input[type="radio"][name="bet-choice"]:checked').val();
-            game.disableBet();
-            game.enableRoll();
+            if(bank.validateBid(bid_amount)) {
+                choice = $('input[type="radio"][name="bet-choice"]:checked').val();
+                game.disableBet();
+                game.enableRoll();
+            } else {
+                alert('Bid too high. You only have $' + bank.total);
+            }
             $scope.isWinner = false;
             $scope.isLoser = false;
         };

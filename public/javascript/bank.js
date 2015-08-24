@@ -10,5 +10,8 @@ var bank = {
     subtractFromBank: function(amount) {
         bank.total -= amount
         return bank.total;
+    },
+    validateBid: function(amount) {
+        return (amount <= bank.total);
     }
 };
