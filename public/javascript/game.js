@@ -13,6 +13,8 @@ var game = {
         game.rollControls = {
             rollButton: $('#roll')
         };
+        $(han).prop('checked', false);
+        $(cho).prop('checked', false);
         game.enableBet();
         game.disable(game.rollControls.rollButton)
     },

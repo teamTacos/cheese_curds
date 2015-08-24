@@ -30,6 +30,15 @@
             $scope.rollTotal = $scope.die1 + $scope.die2;
             $scope.$broadcast('gameTurnEvent', $scope.rollTotal);
             gameResult($scope.rollTotal);
+            if(bank.total == 0) {
+                playAgain = confirm("You're out of money. Play again?");
+                if(playAgain == true) {
+                    bank.init();
+                    results.init();
+                    game.init();
+                    $scope.bank = bank.total;
+                }
+            }
         };
 
         function gameResult(rollTotal) {
