@@ -1,9 +1,11 @@
-require 'sinatra'
+require 'sinatra/base'
+require 'haml'
 
-# get '/' do
-#   haml :index, :format => :html5
-# end
+class CheeseCurds < Sinatra::Base
 
-get '/' do
-  haml :chohan, :format => :html5
+  configure do
+    set :haml, format: :html5
+  end
+
+  get('/') { haml :chohan }
 end
